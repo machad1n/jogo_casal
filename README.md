@@ -1,6 +1,6 @@
 # 🎯 Qual Casal se Conhece Melhor? (Multiplayer)
 
-Este é o jogo **"Qual Casal se Conhece Melhor?"** migrado para uma arquitetura **Full-Stack (Node.js, Express e Socket.IO)** para suportar o acesso de **múltiplos dispositivos** em tempo real, conforme solicitado.
+Este é o jogo **"Qual Casal se Conhece Melhor?"**, perguntas vão aparecer na tela e o objetivo é que ambos do casal respondam da mesma forma. Quem acertar mais respostas em sintonia vence a disputa! 
 
 ## ✨ Funcionalidades Implementadas
 
