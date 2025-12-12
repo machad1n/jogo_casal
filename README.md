@@ -1,15 +1,7 @@
 # 🎯 Qual Casal se Conhece Melhor? (Multiplayer)
 
 Este é o jogo **"Qual Casal se Conhece Melhor?"**, perguntas vão aparecer na tela e o objetivo é que ambos do casal respondam da mesma forma. Quem acertar mais respostas em sintonia vence a disputa! 
-
-## ✨ Funcionalidades Implementadas
-
-*   **Multiplayer em Tempo Real:** Utiliza **Socket.IO** para sincronizar o estado do jogo entre 4 jogadores em diferentes dispositivos.
-*   **Nova Lógica de Pontuação:** Pontua se as respostas dos parceiros forem **diferentes** (ex: um escolhe "Eu" e o outro escolhe "Meu Parceiro(a)"), indicando que ambos concordam sobre quem é a pessoa em questão.
-*   **Fluxo de Sala:** Telas de Criação/Entrada de Sala e Lobby de espera.
-*   **Design Responsivo:** Otimizado para celular.
-*   **30 Perguntas:** Banco de perguntas armazenado no servidor.
-*   
+  
 ## 🎮 Como Jogar
 
 1.  **Crie a Sala:** O primeiro jogador clica em "Criar Sala". O código da sala será exibido.
@@ -19,6 +11,14 @@ Este é o jogo **"Qual Casal se Conhece Melhor?"**, perguntas vão aparecer na t
 5.  **Início:** O jogo começa automaticamente quando o 4º jogador se cadastra.
 6.  **Responda:** Cada jogador responde à pergunta em seu próprio dispositivo.
 7.  **Pontuação:** O servidor verifica a lógica de pontuação invertida e avança para a próxima pergunta.
+
+# ✨ Funcionalidades Implementadas
+
+*   **Multiplayer em Tempo Real:** Utiliza **Socket.IO** para sincronizar o estado do jogo entre 4 jogadores em diferentes dispositivos.
+*   **Nova Lógica de Pontuação:** Pontua se as respostas dos parceiros forem **diferentes** (ex: um escolhe "Eu" e o outro escolhe "Meu Parceiro(a)"), indicando que ambos concordam sobre quem é a pessoa em questão.
+*   **Fluxo de Sala:** Telas de Criação/Entrada de Sala e Lobby de espera.
+*   **Design Responsivo:** Otimizado para celular.
+*   **30 Perguntas:** Banco de perguntas armazenado no servidor.
 
 ## 📁 Estrutura do Projeto
 
