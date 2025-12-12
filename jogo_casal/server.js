@@ -19,9 +19,6 @@ const io = socketIo(server, {
 // Servir arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Porta
-const PORT = process.env.PORT || 3000;
-
 // ===================================
 // ESTADO DO JOGO
 // ===================================
@@ -382,6 +379,6 @@ io.on('connection', (socket) => {
 // INICIAR SERVIDOR
 // ===================================
 
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
