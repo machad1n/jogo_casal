@@ -382,6 +382,7 @@ io.on('connection', (socket) => {
 // INICIAR SERVIDOR
 // ===================================
 
-server.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
+const PORT = process.env.PORT || 10000; // Usa a porta do Render ou 10000 como padrão
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
 });
