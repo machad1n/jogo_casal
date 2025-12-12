@@ -382,7 +382,6 @@ io.on('connection', (socket) => {
 // INICIAR SERVIDOR
 // ===================================
 
-const PORT = process.env.PORT || 10000; 
-server.listen(PORT, '0.0.0.0', () => {
+server.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
