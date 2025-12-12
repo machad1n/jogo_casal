@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual Casal se Conhece Melhor?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tela Inicial -->
+    <div id="telaInicial" class="tela ativa">
+        <div class="container-central">
+            <div class="logo-container">
+                <div class="emoji-grande">💑</div>
+                <h1 class="titulo-principal">Qual Casal se Conhece Melhor?</h1>
+                <p class="subtitulo">Um jogo para descobrir qual casal realmente se conhece!</p>
+                <p class="instrucoes-inicio">Cada jogador acessa em seu próprio dispositivo</p>
+            </div>
+            <button id="btnCriarSala" class="botao botao-principal">Criar Sala</button>
+            <div class="divisor">OU</div>
+            <div class="entrada-sala">
+                <input id="inputSalaId" type="text" class="input-sala" placeholder="Digite o código da sala">
+                <button id="btnEntrarSala" class="botao botao-secundario">Entrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Cadastro -->
+    <div id="telaCadastro" class="tela">
+        <div class="container-central">
+            <h2 class="titulo-tela">Cadastro de Jogador</h2>
+            <p class="instrucoes">Insira seu nome e selecione seu casal</p>
+            <p id="codigoSala" class="codigo-sala"></p>
+            
+            <div class="formulario-jogador">
+                <label class="label-jogador">Seu Nome</label>
+                <input 
+                    id="inputNomeJogador"
+                    type="text" 
+                    class="input-nome" 
+                    placeholder="Digite seu nome"
+                >
+                
+                <label class="label-jogador">Qual casal você pertence?</label>
+                <div class="container-radio">
+                    <label class="radio-opcao">
+                        <input 
+                            type="radio" 
+                            name="casal" 
+                            value="A"
+                            id="casalA"
+                        >
+                        <span class="radio-label">💑 Casal A</span>
+                    </label>
+                    <label class="radio-opcao">
+                        <input 
+                            type="radio" 
+                            name="casal" 
+                            value="B"
+                            id="casalB"
+                        >
+                        <span class="radio-label">👫 Casal B</span>
+                    </label>
+                </div>
+            </div>
+            
+            <button id="btnConfirmarJogador" class="botao botao-principal">Confirmar</button>
+            
+            <div id="aguardandoJogadores" class="aguardando hidden">
+                <p class="aguardando-texto">Aguardando outros jogadores...</p>
+                <div class="spinner"></div>
+                <div id="listaJogadores" class="lista-jogadores"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Perguntas -->
+    <div id="telaPerguntas" class="tela">
+        <div class="container-perguntas">
+            <!-- Placar -->
+            <div class="placar-container">
+                <div class="placar-item casal-a">
+                    <div class="casal-icon">💑</div>
+                    <div class="placar-info">
+                        <span class="casal-nome">Casal A</span>
+                        <span id="placarCasalA" class="placar-numero">0</span>
+                    </div>
+                </div>
+                <div class="placar-item casal-b">
+                    <div class="casal-icon">👫</div>
+                    <div class="placar-info">
+                        <span class="casal-nome">Casal B</span>
+                        <span id="placarCasalB" class="placar-numero">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indicador de Progresso -->
+            <div class="progresso-container">
+                <div class="progresso-barra">
+                    <div id="progressoBarra" class="progresso-preenchimento"></div>
+                </div>
+                <span id="progressoTexto" class="progresso-texto">1/30</span>
+            </div>
+
+            <!-- Pergunta -->
+            <div class="pergunta-container">
+                <h3 id="perguntaTexto" class="pergunta-texto"></h3>
+            </div>
+
+            <!-- Respostas -->
+            <div class="opcoes-resposta">
+                <button id="btnEu" class="botao-resposta" data-resposta="Eu">
+                    Eu
+                </button>
+                <button id="btnParceiro" class="botao-resposta" data-resposta="Meu(a) Parceiro(a)">
+                    Meu(a) Parceiro(a)
+                </button>
+            </div>
+
+            <!-- Status de Resposta -->
+            <div id="statusResposta" class="status-resposta hidden">
+                <p id="textoStatusResposta" class="texto-status"></p>
+            </div>
+
+            <!-- Feedback de Acerto/Erro -->
+            <div id="feedbackResultado" class="feedback-resultado hidden">
+                <div class="feedback-conteudo">
+                    <span id="feedbackTexto" class="feedback-texto"></span>
+                    <span id="feedbackEmoji" class="feedback-emoji"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela Final -->
+    <div id="telaFinal" class="tela">
+        <div class="container-central">
+            <div class="resultado-container">
+                <div class="emoji-resultado">🏆</div>
+                <h2 id="textoResultado" class="titulo-resultado"></h2>
+                <p id="mensagemResultado" class="mensagem-resultado"></p>
+                
+                <div class="placar-final">
+                    <div class="placar-final-item">
+                        <span class="placar-final-casal">Casal A</span>
+                        <span id="placarFinalA" class="placar-final-numero">0</span>
+                    </div>
+                    <span class="vs-texto">vs</span>
+                    <div class="placar-final-item">
+                        <span class="placar-final-casal">Casal B</span>
+                        <span id="placarFinalB" class="placar-final-numero">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="btnNovoJogo" class="botao botao-principal">Jogar Novamente</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
